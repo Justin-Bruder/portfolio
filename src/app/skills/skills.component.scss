@@ -1,0 +1,144 @@
+section {
+  background-color: #1c1c1c;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  height: auto;
+  margin-top: 100px;
+}
+
+.skillSetContainer,
+.skillIconsContainer {
+  flex: 1 1 45%;
+  max-width: 45%;
+  background-color: #1c1c1c;
+}
+
+.skillSetContainer {
+  box-sizing: border-box;
+  padding-left: 40px;
+  padding-right: 40px;
+  min-width: 500px;
+}
+
+.skillIconsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 52px;
+  padding: 20px;
+  box-sizing: border-box;
+  padding-top: 70px;
+}
+
+.skillIconsContainer > div {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.skillIconsContainer img {
+  width: 50px;
+  height: 50px;
+  animation: none;
+}
+
+.skillIconsContainer > div:hover img {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.skillIconsContainer span {
+  color: #d9d9d9;
+  text-align: center;
+  font-size: 16px;
+}
+
+.innerSkillSetContainer {
+  border: 1px solid #6ad7bf;
+  background-color: #3dcfb71a;
+  border-radius: 30px;
+  padding: 20px;
+  height: 100%;
+  box-sizing: border-box;
+
+  > p {
+    color: #d9d9d9;
+  }
+
+  > h1 {
+    color: #6ad7bf;
+    font-size: 40px;
+    font-weight: 700;
+  }
+}
+
+button {
+  border: 1px solid #d9d9d9;
+  border-radius: 30px;
+  padding: 16px;
+  color: #d9d9d9;
+  font-size: 18px;
+  background-color: #3dcfb71a;
+  margin-top: 40px;
+
+  &:hover {
+    border: 1px solid #6ad7bf;
+    color: #6ad7bf;
+  }
+}
+
+h2 {
+  color: #6ad7bf;
+  padding-bottom: 20px;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+@media (max-width: 1050px) {
+  section {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0px;
+  }
+
+  .skillSetContainer {
+    max-width: 100%;
+    min-width: 200px;
+  }
+
+  .skillIconsContainer {
+    max-width: 100%;
+    padding-top: 10px;
+  }
+}
+
+@media (max-width: 490px) {
+  .skillSetContainer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 430px) {
+  .skillIconsContainer {
+    gap: 30px;
+  }
+}

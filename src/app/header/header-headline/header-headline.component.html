@@ -1,0 +1,17 @@
+<section>
+    <h2 *ngIf="isEnglish; else deTitle">Frontend Developer</h2>
+    <ng-template #deTitle><h2>Frontend-Entwickler</h2></ng-template>
+    <h1>Justin Bruder</h1>
+
+    <div class="containerButtonHeadline">
+        <button (click)="scrollToProjects()" class="buttonHeadline">
+            <span *ngIf="isEnglish; else deCheckWork">Check my work</span>
+            <ng-template #deCheckWork>Meine Arbeiten ansehen</ng-template>
+        </button>
+        
+        <button (click)="scrollToContactMe()" class="buttonHeadline">
+            <span *ngIf="isEnglish; else deContactMe">Contact me</span>
+            <ng-template #deContactMe>Kontakt aufnehmen</ng-template>
+        </button>
+    </div>
+</section>

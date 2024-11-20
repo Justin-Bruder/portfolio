@@ -1,0 +1,46 @@
+<section id="project-section" class="container">
+  <div class="projectContainer">
+    <h2 *ngIf="isEnglish; else dePortfolio">Portfolio</h2>
+    <ng-template #dePortfolio>
+      <h2>Portfolio</h2>
+    </ng-template>
+
+    <h1 *ngIf="isEnglish; else deFeatured">Featured Projects</h1>
+    <ng-template #deFeatured>
+      <h1>Ausgewählte Projekte</h1>
+    </ng-template>
+
+    <p class="portfolioHeaderExplore" *ngIf="isEnglish; else deDescription">
+      Explore a selection of my work here - interact with projects to see my skills in action.
+    </p>
+    <ng-template #deDescription>
+      <p class="portfolioHeaderExplore">Entdecken Sie hier eine Auswahl meiner Arbeiten – interagieren Sie mit
+        Projekten, um meine Fähigkeiten in Aktion zu sehen.</p>
+    </ng-template>
+
+    <div class="mainContainer">
+      <div class="projectsAndPictureContainer" *ngFor="let project of projects">
+        <div class="singleProjectContainer" (click)="openDialog(project)">
+          <div class="projectNameAndArrowContainer">
+            <h3>{{ project.projectName }}</h3>
+            <img src="assets/img/whiteArrowTopRightCorner.png">
+          </div>
+          <div class="usedSkillsContainer">
+            <div *ngFor="let skill of project.skills; let i = index; let last = last" class="singleUsedSkillsContainer">
+              <span>{{ skill.name }}</span>
+              <img *ngIf="!last" src="assets/img/littleGreenLine.png">
+            </div>
+          </div>
+        </div>
+
+        <div class="projectPictureAndBackground">
+          <div class="backgroundBox"></div>
+          <div class="projectPicture" [style.backgroundImage]="'url(' + project.hoverImage + ')'"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-dialog [isEnglish]="isEnglish" *ngIf="selectedProject" [projects]="projects"
+    [currentProjectIndex]="projects.indexOf(selectedProject)" (close)="closeDialog()"></app-dialog>
+</section>

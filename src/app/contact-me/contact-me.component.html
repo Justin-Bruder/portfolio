@@ -1,0 +1,81 @@
+<section id="contactMe-section" class="container">
+  <div class="contactMeTextContainer">
+    <h2 *ngIf="isEnglish; else deContactMe">Contact me</h2>
+    <ng-template #deContactMe><h2>Kontakt aufnehmen</h2></ng-template>
+
+    <h1 *ngIf="isEnglish; else deLetsWork">Let's work<br>together</h1>
+    <ng-template #deLetsWork><h1>Teamarbeit</h1></ng-template>
+
+    <h3 *ngIf="isEnglish; else deGotProblem">Got a Problem to solve?</h3>
+    <ng-template #deGotProblem><h3>Haben Sie ein Problem zu lösen?</h3></ng-template>
+
+    <p *ngIf="isEnglish; else deIntroText">
+      Contact me through this form, I am interested in hearing from you, knowing<br>your ideas and contributing to your projects with my work.
+    </p>
+    <ng-template #deIntroText>
+      <p>
+        Kontaktieren Sie mich über dieses Formular. Ich bin gespannt auf Ihre Ideen und freue mich darauf, 
+        mit meiner Arbeit zu Ihren Projekten beizutragen.
+      </p>
+    </ng-template>
+
+    <p>
+      <span class="spanWhite" *ngIf="isEnglish; else deNeedFrontend">Need a Frontend developer? </span>
+      <span class="spanGreen" *ngIf="isEnglish; else deLetsTalk"> Let's talk!</span>
+    </p>
+    <ng-template #deNeedFrontend><span class="spanWhite">Benötigen Sie einen Frontend-Entwickler?</span></ng-template>
+    <ng-template #deLetsTalk><span class="spanGreen"> Lass uns reden!</span></ng-template>
+  </div>
+
+  <div class="formContainer">
+    <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+      <div class="singleInputContainer">
+        <h3 class="h3FormContainer" *ngIf="isEnglish; else deNamePrompt">What's your name?</h3>
+        <ng-template #deNamePrompt><h3 class="h3FormContainer">Wie heißen Sie?</h3></ng-template>
+        <input minlength="4" #name="ngModel" [(ngModel)]="contactData.name" name="name" placeholder="Your name goes here" required>
+        <span class="spanFormContainer" *ngIf="!name.valid && name.touched">
+          {{ isEnglish ? 'Oops! it seems your name is missing' : 'Hoppla! Ihr Name fehlt' }}
+        </span>
+      </div>
+
+      <div class="singleInputContainer">
+        <h3 class="h3FormContainer" *ngIf="isEnglish; else deEmailPrompt">What's your email?</h3>
+        <ng-template #deEmailPrompt><h3 class="h3FormContainer">Wie lautet Ihre E-Mail?</h3></ng-template>
+        <input minlength="4" #email="ngModel" [(ngModel)]="contactData.email" name="email" placeholder="youremail@email.com" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+        <span class="spanFormContainer" *ngIf="!email.valid && email.touched">
+          {{ isEnglish ? 'Oops! your email is required' : 'Hoppla! Ihre E-Mail ist erforderlich' }}
+        </span>
+      </div>
+
+      <div class="singleInputContainer">
+        <h3 class="h3FormContainer" *ngIf="isEnglish; else deHelpPrompt">How can I help you?</h3>
+        <ng-template #deHelpPrompt><h3 class="h3FormContainer">Wie kann ich Ihnen helfen?</h3></ng-template>
+        <textarea minlength="4" #message="ngModel" [(ngModel)]="contactData.message" name="message" placeholder="Hello Justin, I am interested in..." required></textarea>
+        <span class="spanFormContainer" *ngIf="!message.valid && message.touched">
+          {{ isEnglish ? 'What do you need to develop?' : 'Was möchten Sie entwickeln?' }}
+        </span>
+      </div>
+
+      <div class="checkBoxContainer">
+        <div class="custom-checkbox" (click)="toggleCheck()" [class.checked]="isChecked"></div>
+        <p>
+          <span class="spanWhite" *ngIf="isEnglish; else dePrivacyText1">I've read the </span>
+          <a routerLink="/privacy-policy">privacy policy</a>
+          <span class="spanWhite" *ngIf="isEnglish; else dePrivacyText2"> and agree to the processing of my data as outlined</span>
+        </p>
+        <ng-template #dePrivacyText1><span class="spanWhite">Ich habe die </span></ng-template>
+        <ng-template #dePrivacyText2><span class="spanWhite"> gelesen und stimme der Verarbeitung meiner Daten zu</span></ng-template>
+      </div>
+      <span class="spanFormContainer" *ngIf="!isChecked && formSubmitted">
+        {{ isEnglish ? 'Please accept the privacy policy' : 'Bitte akzeptieren Sie die Datenschutzrichtlinie' }}
+      </span>
+
+      <div class="buttonContainer">
+        <button type="submit" [disabled]="!contactForm.valid || !isChecked">
+          <span *ngIf="isEnglish; else deSayHello">Say Hello</span>
+          <ng-template #deSayHello>Hallo sagen</ng-template>
+        </button>
+      </div>
+    </form>
+  </div>
+</section>

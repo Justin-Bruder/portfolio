@@ -1,0 +1,97 @@
+<section id="skill-section" class="container">
+    <div class="skillSetContainer">
+      <h2 class="headlineTechnologies" *ngIf="isEnglish; else deTechnologies">Technologies</h2>
+      <ng-template #deTechnologies><h2 class="headlineTechnologies">Technologien</h2></ng-template>
+  
+      <div class="innerSkillSetContainer">
+        <h1 *ngIf="isEnglish; else deSkillSet">Skill Set</h1>
+        <ng-template #deSkillSet><h1>Fähigkeiten</h1></ng-template>
+  
+        <p *ngIf="isEnglish; else deDescription">
+          My journey has involved working on diverse projects, employing a range of frontend technologies and concepts. 
+          I am open to embracing new technologies and methodologies to continuously enhance my skills and stay ahead 
+          in the ever-evolving landscape of web development.
+        </p>
+        <ng-template #deDescription>
+          <p>
+            Meine Reise umfasst die Arbeit an verschiedenen Projekten unter Einsatz verschiedener Frontend-Technologien und Konzepte. 
+            Ich bin offen für neue Technologien und Methoden, um meine Fähigkeiten kontinuierlich zu erweitern und in der sich ständig 
+            verändernden Landschaft der Webentwicklung einen Schritt voraus zu sein.
+          </p>
+        </ng-template>
+  
+        <h2 *ngIf="isEnglish; else deNeedSkill">
+          <span>You need </span>
+          <span>another skill?</span>
+        </h2>
+        <ng-template #deNeedSkill>
+          <h2>
+            <span>Sie benötigen </span>
+            <span>eine weitere Fähigkeit?</span>
+          </h2>
+        </ng-template>
+  
+        <p *ngIf="isEnglish; else deContactText">
+          Feel free to contact me. I look forward to expanding on my previous knowledge.
+        </p>
+        <ng-template #deContactText>
+          <p>
+            Zögern Sie nicht, mich zu kontaktieren. Ich freue mich darauf, mein Wissen zu erweitern.
+          </p>
+        </ng-template>
+  
+        <button (click)="scrollToContactMe()">
+          <span *ngIf="isEnglish; else deLetsTalk">Let's Talk</span>
+          <ng-template #deLetsTalk>Kontakt aufnehmen</ng-template>
+        </button>
+      </div>
+    </div>
+  
+    <div class="skillIconsContainer">
+      <div>
+        <img src="assets/img/html.png">
+        <span>HTML</span>
+      </div>
+      <div>
+        <img src="assets/img/css.png">
+        <span>CSS</span>
+      </div>
+      <div>
+        <img src="assets/img/Javascript.png">
+        <span>JavaScript</span>
+      </div>
+      <div>
+        <img src="assets/img/materialdesign.png">
+        <span>Material<br>Design</span>
+      </div>
+      <div>
+        <img src="assets/img/typescript.png">
+        <span>TypeScript</span>
+      </div>
+      <div>
+        <img src="assets/img/Angular.png">
+        <span>Angular</span>
+      </div>
+      <div>
+        <img src="assets/img/Firebase.png">
+        <span>Firebase</span>
+      </div>
+      <div>
+        <img src="assets/img/git.png">
+        <span>GIT</span>
+      </div>
+      <div>
+        <img src="assets/img/api.png">
+        <span>Rest-Api</span>
+      </div>
+      <div>
+        <img src="assets/img/scrum.png">
+        <span>Scrum</span>
+      </div>
+      <div>
+        <img src="assets/img/mindset.png">
+        <span>Growth<br>Mindset</span>
+      </div>
+    </div>
+  </section>
+  

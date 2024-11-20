@@ -1,1 +1,128 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Fira Code';
+  overflow: visible;
+}
+
+button{
+  cursor: pointer;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+body::-webkit-scrollbar {
+  background-color: #1C1C1C;
+  width: 5px;
+}
+
+body::-webkit-scrollbar-corner {
+  background-color: #1C1C1C;
+}
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #6AD7BF;
+  border-radius: 50px;
+}
+
+.cursor-shadow {
+  position: fixed;
+  z-index: 999999;
+  width: 50px;
+  height: 50px;
+  filter: blur(40px);
+  background-color: #6AD7BF;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease-out;
+}
+
+button {
+  overflow: hidden;
+}
+
+button span {
+  display: inline-block;
+  white-space: nowrap;
+  transition: transform 0.5s ease;
+}
+
+button:hover span {
+  animation: slideOutIn 2s ease forwards;
+}
+
+@keyframes slideOutIn {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-120%);
+  }
+  51% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* fira-code-300 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-weight: 300;
+  src: url('./assets/fonts/fira-code-v22-latin-300.woff2') format('woff2');
+}
+
+/* fira-code-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/fira-code-v22-latin-regular.woff2') format('woff2');
+}
+
+/* fira-code-500 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-weight: 500;
+  src: url('./assets/fonts/fira-code-v22-latin-500.woff2') format('woff2');
+}
+
+/* fira-code-600 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-weight: 600;
+  src: url('./assets/fonts/fira-code-v22-latin-600.woff2') format('woff2');
+}
+
+/* fira-code-700 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./assets/fonts/fira-code-v22-latin-700.woff2') format('woff2');
+}

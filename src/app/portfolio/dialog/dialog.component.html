@@ -1,0 +1,54 @@
+<section>
+  <div class="mainDialogContainer">
+    <div class="leftSideDialogContainer">
+      <h1>0{{ project.projectNumber }}</h1>
+      <h2>{{ project.projectName }}</h2>
+
+      <h3 *ngIf="isEnglish; else deProjectAbout">What is this project about?</h3>
+      <ng-template #deProjectAbout><h3>Worum geht es in diesem Projekt?</h3></ng-template>
+
+      <p>{{ project.description }}</p>
+
+      <div class="usedSkillsMainContainer">
+        <div *ngFor="let skill of project.skills" class="skillItem">
+          <img [src]="skill.image" alt="{{ skill.name }} icon" class="skillImage">
+          <span>{{ skill.name }}</span>
+        </div>
+      </div>
+
+      <div class="buttonContainer">
+        <button>
+          <a [href]="project.githubLink" target="_blank">
+            <span *ngIf="isEnglish; else deGithub">GitHub</span>
+            <ng-template #deGithub>GitHub</ng-template>
+            <img src="assets/img/arrowButton.png">
+          </a>
+        </button>
+        <button>
+          <a [href]="project.liveLink" target="_blank">
+            <span *ngIf="isEnglish; else deLiveTest">Live Test</span>
+            <ng-template #deLiveTest>Live-Test</ng-template>
+            <img src="assets/img/arrowButton.png">
+          </a>
+        </button>
+      </div>
+      <div class="nextProjectContainerMobile" (click)="nextProject()">
+        <span *ngIf="isEnglish; else deNextProject">Next project</span>
+        <ng-template #deNextProject>Nächstes Projekt</ng-template>
+        <div class="nextProjectArrow"></div>
+      </div>
+    </div>
+
+    <div class="rightSideDialogContainer">
+      <div (click)="closeDialog()" class="closeCrossDialog"></div>
+      <div class="projectPictureContainer">
+      <img class="projectPictureDialog" [src]="project.projectImage" alt="{{ project.projectName }}">
+    </div>
+      <div class="nextProjectContainer" (click)="nextProject()">
+        <span *ngIf="isEnglish; else deNextProject">Next project</span>
+        <ng-template #deNextProject>Nächstes Projekt</ng-template>
+        <div class="nextProjectArrow"></div>
+      </div>
+    </div>
+  </div>
+</section>

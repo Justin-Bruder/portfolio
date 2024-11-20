@@ -1,0 +1,275 @@
+section {
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 20px;
+    background-color: #1C1C1C;
+}
+
+textarea {
+    background: none;
+    border: none;
+    outline: none;
+    color: #D9D9D9;
+    font-size: 14px;
+    width: 100%;
+    padding: 10px 0 0 0;
+    box-sizing: border-box;
+    padding-left: 40px;
+    resize: none;
+
+    &:focus {
+        border: none;
+        outline: none;
+    }
+
+    &::placeholder {
+        color: #D9D9D9;
+        opacity: 1;
+    }
+
+    &:hover {
+        color: white;
+    }
+}
+
+.spanWhite {
+    color: #D9D9D9;
+}
+
+.spanGreen {
+    color: #6AD7BF;
+}
+
+h3 {
+    color: #D9D9D9;
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #6AD7BF;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+h1 {
+    color: #6AD7BF;
+    background-color: transparent;
+    padding-top: 10px;
+    font-weight: 700;
+    font-size: 64px;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #D9D9D9;
+    margin-bottom: 20px;
+}
+
+.formContainer {
+    width: 40%;
+    min-width: 300px;
+    padding-right: 120px;
+    margin-top: 140px;
+}
+
+.contactMeTextContainer {
+    width: 40%;
+    min-width: 270px;
+    margin-left: 40px;
+    margin-right: 20px;
+    margin-top: 100px;
+}
+
+.singleInputContainer {
+    border-top: #6AD7BF 1px solid;
+    border-bottom: #6AD7BF 1px solid;
+    > span {
+        color: #B86363;
+        padding-left: 40px;
+    }
+    > h3 {
+        color: #6AD7BF;
+        padding-top: 10px;
+        margin-bottom: 0;
+        padding-left: 40px;
+    }
+    > input {
+        background: none;
+        border: none;
+        outline: none;
+        color: #D9D9D9;
+        font-size: 16px;
+        width: 100%;
+        padding: 10px 0;
+        box-sizing: border-box;
+        padding-left: 40px;
+
+        &:focus {
+            border: none;
+            outline: none;
+        }
+
+        &::placeholder {
+            color: #D9D9D9;
+            opacity: 1;
+        }
+
+        &:hover {
+            color: white;
+        }
+    }
+}
+
+.checkBoxContainer {
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+}
+
+.checkBox {
+    margin-bottom: 20px;
+}
+
+.buttonContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    border: 1px solid #D9D9D9;
+    border-radius: 30px;
+    padding: 16px;
+    color: #D9D9D9;
+    font-size: 18px;
+    background-color: #1C1C1C;
+    margin-top: 10px;
+
+    &:hover {
+        border: 1px solid #6AD7BF;
+        color: #6AD7BF;
+    }
+}
+
+a {
+    color: #6AD7BF;
+}
+
+.custom-checkbox {
+    width: 20px;
+    height: 18px;
+    border: 2px solid #6AD7BF;
+    border-radius: 4px;
+    background-color: #1C1C1C;
+    flex-shrink: 0;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: rgba(106, 215, 191, 0.2);
+    }
+
+    &.checked {
+        background-color: #1C1C1C;
+    }
+
+    &.checked::after {
+        content: '';
+        position: absolute;
+        top: 0px;
+        left: 6px;
+        width: 6px;
+        height: 12px;
+        border: solid #6AD7BF;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+    }
+}
+
+.spanFormContainer {
+    color: #B86363;
+    padding-left: 50px;
+}
+
+
+@media (max-width: 1200px) {
+    section {
+        gap: 0px;
+    }
+}
+
+@media (max-width: 1050px) {
+    section {
+        flex-direction: column;
+        align-items: flex-start; 
+        justify-content: flex-start;
+    }
+
+    .contactMeTextContainer,
+    .formContainer {
+        max-width: 100%;
+        margin-left: 40px;
+    }
+
+    .contactMeTextContainer{
+        width: 80%;
+    }
+
+    .formContainer {
+        padding-right: 0px;
+        margin-top: 40px;
+        width: 90%;
+    }
+}
+
+@media (max-width: 600px) {
+    .contactMeTextContainer {
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 100px;
+    }
+
+    .formContainer {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    .spanFormContainer {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 450px) {
+    .contactMeTextContainer {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .formContainer {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 12px;
+    }
+}

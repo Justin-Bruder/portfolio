@@ -235,14 +235,14 @@ a {
 
 @media (max-width: 600px) {
     .contactMeTextContainer {
-        margin-left: 20px;
-        margin-right: 20px;
+        margin-left: 40px;
+        margin-right: 40px;
         margin-top: 100px;
     }
 
     .formContainer {
-        margin-left: 20px;
-        margin-right: 20px;
+        margin-left: 40px;
+        margin-right: 40px;
     }
 
     h1 {
@@ -251,6 +251,18 @@ a {
 
     .spanFormContainer {
         font-size: 12px;
+    }
+}
+
+@media (max-width: 490px) {
+    .contactMeTextContainer {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .formContainer {
+        margin-left: 20px;
+        margin-right: 20px;
     }
 }
 

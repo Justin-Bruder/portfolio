@@ -16,7 +16,7 @@ export class PortfolioComponent {
     {
       projectNumber: 1,
       projectName: 'Join',
-      description: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
+      description: 'Task manager application. Create and organize tasks using drag and drop functions, assign users and categories.',
       skills: [
         { name: 'JavaScript', image: 'assets/img/scriptIconDialog.png' },
         { name: 'HTML', image: 'assets/img/htmlIconDialog.png' },

@@ -18,28 +18,26 @@
     <a (click)="scrollToAboutMe()">
       <span *ngIf="isEnglish; else deAboutMe">About me</span>
       <ng-template #deAboutMe><span>Über mich</span></ng-template>
-      <img src="assets/img/smallGreenDotHover.png">
+      <img src="assets/img/smallGreenDotHover.png" alt="Indicator">
     </a>
-    
+
     <a (click)="scrollToSkills()">
       <span *ngIf="isEnglish; else deSkills">Skills</span>
       <ng-template #deSkills><span>Fähigkeiten</span></ng-template>
-      <img src="assets/img/smallGreenDotHover.png">
+      <img src="assets/img/smallGreenDotHover.png" alt="Indicator">
     </a>
-    
+
     <a (click)="scrollToProjects()">
       <span *ngIf="isEnglish; else deProjects">Projects</span>
       <ng-template #deProjects><span>Projekte</span></ng-template>
-      <img src="assets/img/smallGreenDotHover.png">
+      <img src="assets/img/smallGreenDotHover.png" alt="Indicator">
     </a>
   </div>
 
-  <div class="navbarLogo">
-  </div>
+  <div class="navbarLogo" (click)="navigateToHome()" style="cursor: pointer;" alt="Logo"></div>
 
   <div class="navbarMobile">
-    <div class="navbarLogoMobile">
-    </div>
+    <div class="navbarLogoMobile"></div>
     <div class="navbarMenuIcon" (click)="showMenu()"></div>
   </div>
 
@@ -48,21 +46,21 @@
       <a (click)="scrollToAboutMe()">
         <span *ngIf="isEnglish; else deAboutMe">About me</span>
         <ng-template #deAboutMe><span>Über mich</span></ng-template>
-        <img src="assets/img/smallGreenDotHover.png">
+        <img src="assets/img/smallGreenDotHover.png" alt="Indicator">
       </a>
-      
+
       <a (click)="scrollToSkills()">
         <span *ngIf="isEnglish; else deSkills">Skills</span>
         <ng-template #deSkills><span>Fähigkeiten</span></ng-template>
-        <img src="assets/img/smallGreenDotHover.png">
+        <img src="assets/img/smallGreenDotHover.png" alt="Indicator">
       </a>
-      
+
       <a (click)="scrollToProjects()">
         <span *ngIf="isEnglish; else deProjects">Projects</span>
         <ng-template #deProjects><span>Projekte</span></ng-template>
-        <img src="assets/img/smallGreenDotHover.png">
+        <img src="assets/img/smallGreenDotHover.png" alt="Indicator">
       </a>
-      
+
       <div class="languageSwitch" (click)="toggleLanguage()">
         <div
           class="generalDesignSingleSwitch"

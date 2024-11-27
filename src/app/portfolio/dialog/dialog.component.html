@@ -5,9 +5,11 @@
       <h2>{{ project.projectName }}</h2>
 
       <h3 *ngIf="isEnglish; else deProjectAbout">What is this project about?</h3>
-      <ng-template #deProjectAbout><h3>Worum geht es in diesem Projekt?</h3></ng-template>
+      <ng-template #deProjectAbout>
+        <h3>Worum geht es in diesem Projekt?</h3>
+      </ng-template>
 
-      <p>{{ project.description }}</p>
+      <p style="height: 30px;">{{ description }}</p>
 
       <div class="usedSkillsMainContainer">
         <div *ngFor="let skill of project.skills" class="skillItem">
@@ -20,21 +22,28 @@
         <button>
           <a [href]="project.githubLink" target="_blank">
             <span *ngIf="isEnglish; else deGithub">GitHub</span>
-            <ng-template #deGithub>GitHub</ng-template>
+            <ng-template #deGithub>
+              <span class="buttonSpan">GitHub</span>
+            </ng-template>
             <img src="assets/img/arrowButton.png">
           </a>
         </button>
         <button>
           <a [href]="project.liveLink" target="_blank">
             <span *ngIf="isEnglish; else deLiveTest">Live Test</span>
-            <ng-template #deLiveTest>Live-Test</ng-template>
+            <ng-template #deLiveTest>
+              <span class="buttonSpan">Live-Test</span>
+            </ng-template>
             <img src="assets/img/arrowButton.png">
           </a>
         </button>
       </div>
+
       <div class="nextProjectContainerMobile" (click)="nextProject()">
         <span *ngIf="isEnglish; else deNextProject">Next project</span>
-        <ng-template #deNextProject>Nächstes Projekt</ng-template>
+        <ng-template #deNextProject>
+          <span class="nextProjectSpan">Nächstes Projekt</span>
+        </ng-template>
         <div class="nextProjectArrow"></div>
       </div>
     </div>
@@ -42,11 +51,13 @@
     <div class="rightSideDialogContainer">
       <div (click)="closeDialog()" class="closeCrossDialog"></div>
       <div class="projectPictureContainer">
-      <img class="projectPictureDialog" [src]="project.projectImage" alt="{{ project.projectName }}">
-    </div>
+        <img class="projectPictureDialog" [src]="project.projectImage" alt="{{ project.projectName }}">
+      </div>
       <div class="nextProjectContainer" (click)="nextProject()">
         <span *ngIf="isEnglish; else deNextProject">Next project</span>
-        <ng-template #deNextProject>Nächstes Projekt</ng-template>
+        <ng-template #deNextProject>
+          <span class="nextProjectSpan">Nächstes Projekt</span>
+        </ng-template>
         <div class="nextProjectArrow"></div>
       </div>
     </div>

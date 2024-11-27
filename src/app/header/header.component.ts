@@ -19,4 +19,9 @@ export class HeaderComponent {
   onLanguageChange(isEnglish: boolean) {
     this.languageChanged.emit(isEnglish);
   }
+
+  toggleLanguage() {
+    this.isEnglish = !this.isEnglish;
+    this.languageChanged.emit(this.isEnglish);
+  }
 }

@@ -1,48 +1,50 @@
-<section>
-  <div class="containerHeaderBannerLeftSide">
-    <a (click)="scrollToAboutMe()" class="containerSmallArrow">
-      <img src="assets/img/smallArrowDown.png">
-    </a>
-    <div class="greenLineHeaderLeft"></div>
-  </div>
+<section class="header-banner">
+  <div class="header-banner-wrapper">
+    <div class="containerHeaderBannerLeftSide">
+      <a (click)="scrollToAboutMe()" class="containerSmallArrow">
+        <img src="assets/img/smallArrowDown.png">
+      </a>
+      <div class="greenLineHeaderLeft"></div>
+    </div>
 
-  <div class="containerHeaderBannerRightSide">
-    <a class="headerMailadressStyle">justin.brudericloud.com</a>
-    <a class="containerIconAndDot mailIcon">
-      <img src="assets/img/mailIconGreen.png">
-      <img class="smallGreenDot" src="assets/img/smallGreenDotHover.png">
-    </a>
-
-    <a class="containerIconAndDot">
-      <img src="assets/img/githubIconGreen.png">
-      <img class="smallGreenDot" src="assets/img/smallGreenDotHover.png">
-    </a>
-
-    <a class="containerIconAndDot">
-      <img src="assets/img/linkedinIconGreen.png">
-      <img class="smallGreenDot" src="assets/img/smallGreenDotHover.png">
-    </a>
-
-    <div class="greenLineHeaderRight"></div>
+    <div class="containerHeaderBannerRightSide">
+      <a href="mailto:info&#64;justinbruder.de" class="headerMailadressStyle">info&#64;justinbruder.de</a>
+      <a href="mailto:info&#64;justinbruder.de" class="containerIconAndDot mailIcon" rel="external">
+        <img src="assets/img/mailIconGreen.png" alt="Mail Icon">
+        <img class="smallGreenDot" src="assets/img/smallGreenDotHover.png">
+      </a>
+      
+      <a href="https://github.com/Justin-Bruder" target="_blank" rel="noopener noreferrer external" class="containerIconAndDot">
+        <img src="assets/img/githubIconGreen.png" alt="GitHub Icon">
+        <img class="smallGreenDot" src="assets/img/smallGreenDotHover.png">
+      </a>   
+      <a href="https://www.linkedin.com/in/justin-bruder-2ba04733b/" target="_blank" rel="noopener noreferrer external"class="containerIconAndDot">
+        <img src="assets/img/linkedinIconGreen.png">
+        <img class="smallGreenDot" src="assets/img/smallGreenDotHover.png">
+      </a>
+      <div class="greenLineHeaderRight"></div>
+    </div>
   </div>
 </section>
 
 <div class="bannerRotation">
-  <div class="bannerContent">
-    <span *ngIf="isEnglish; else deFrontend">Frontend Developer</span>
-    <ng-template #deFrontend><span>Frontend-Entwickler</span></ng-template>
-    <img src="assets/img/smallGreenDotHover.png">
+  <div class="bannerRotation-wrapper">
+    <div class="bannerContent">
+      <span *ngIf="isEnglish; else deFrontend">Frontend Developer</span>
+      <ng-template #deFrontend><span>Frontend-Entwickler</span></ng-template>
+      <img src="assets/img/smallGreenDotHover.png">
 
-    <span *ngIf="isEnglish; else deLocation">Based in Erfurt</span>
-    <ng-template #deLocation><span>Standort: Erfurt</span></ng-template>
-    <img src="assets/img/smallGreenDotHover.png">
+      <span *ngIf="isEnglish; else deLocation">Based in Erfurt</span>
+      <ng-template #deLocation><span>Standort: Erfurt</span></ng-template>
+      <img src="assets/img/smallGreenDotHover.png">
 
-    <span *ngIf="isEnglish; else deRemote">Available for remote work</span>
-    <ng-template #deRemote><span>Verfügbar für Fernarbeit</span></ng-template>
-    <img src="assets/img/smallGreenDotHover.png">
+      <span *ngIf="isEnglish; else deRemote">Available for remote work</span>
+      <ng-template #deRemote><span>Verfügbar für Fernarbeit</span></ng-template>
+      <img src="assets/img/smallGreenDotHover.png">
 
-    <span *ngIf="isEnglish; else deOpen">Open to work</span>
-    <ng-template #deOpen><span>Offen für neue Möglichkeiten</span></ng-template>
-    <img src="assets/img/smallGreenDotHover.png">
+      <span *ngIf="isEnglish; else deOpen">Open to work</span>
+      <ng-template #deOpen><span>Offen für neue Möglichkeiten</span></ng-template>
+      <img src="assets/img/smallGreenDotHover.png">
+    </div>
   </div>
 </div>

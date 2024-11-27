@@ -68,6 +68,13 @@ section {
   }
 }
 
+.iconContainer{
+  >img{
+    height: 26px;
+    width: 26px;
+  }
+}
+
 .pictureContainer {
   position: absolute;
   top: 0;

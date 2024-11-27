@@ -5,8 +5,27 @@
   overflow: visible;
 }
 
-button{
+
+button {
   cursor: pointer;
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+  background-color: #111;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+
+  span {
+    display: inline-block;
+    white-space: nowrap;
+    transition: transform 0.5s ease;
+  }
+
+  &:hover span {
+    animation: slideOutInSmooth 2s ease-in-out forwards;
+  }
 }
 
 body {
@@ -53,36 +72,23 @@ body::-webkit-scrollbar-thumb {
   transition: transform 0.1s ease-out;
 }
 
-button {
-  overflow: hidden;
-}
-
-button span {
-  display: inline-block;
-  white-space: nowrap;
-  transition: transform 0.5s ease;
-}
-
-button:hover span {
-  animation: slideOutIn 2s ease forwards;
-}
-
-@keyframes slideOutIn {
+/* Keyframes für fließende Span-Animation */
+@keyframes slideOutInSmooth {
   0% {
     transform: translateX(0);
   }
-  50% {
-    transform: translateX(-120%);
+  49% {
+    transform: translateX(-150%);
   }
-  51% {
-    transform: translateX(100%);
+  50% {
+    transform: translateX(150%);
   }
   100% {
     transform: translateX(0);
   }
 }
 
-/* fira-code-300 - latin */
+/* Fonts */
 @font-face {
   font-display: swap;
   font-family: 'Fira Code';
@@ -91,7 +97,6 @@ button:hover span {
   src: url('./assets/fonts/fira-code-v22-latin-300.woff2') format('woff2');
 }
 
-/* fira-code-regular - latin */
 @font-face {
   font-display: swap;
   font-family: 'Fira Code';
@@ -100,7 +105,6 @@ button:hover span {
   src: url('./assets/fonts/fira-code-v22-latin-regular.woff2') format('woff2');
 }
 
-/* fira-code-500 - latin */
 @font-face {
   font-display: swap;
   font-family: 'Fira Code';
@@ -109,7 +113,6 @@ button:hover span {
   src: url('./assets/fonts/fira-code-v22-latin-500.woff2') format('woff2');
 }
 
-/* fira-code-600 - latin */
 @font-face {
   font-display: swap;
   font-family: 'Fira Code';
@@ -118,7 +121,6 @@ button:hover span {
   src: url('./assets/fonts/fira-code-v22-latin-600.woff2') format('woff2');
 }
 
-/* fira-code-700 - latin */
 @font-face {
   font-display: swap;
   font-family: 'Fira Code';

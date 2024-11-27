@@ -6,11 +6,12 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './dialog.component.html',
-  styleUrls: ['./dialog.component.scss']
+  styleUrls: ['./dialog.component.scss'],
 })
 export class DialogComponent {
-  @Input() projects: any[] = []; 
-  @Input() currentProjectIndex: number = 0; 
+  @Input() projects: any[] = [];
+  @Input() currentProjectIndex: number = 0;
+  @Input() isEnglish: boolean = true;
   @Output() close = new EventEmitter<void>();
 
   closeDialog() {
@@ -20,10 +21,14 @@ export class DialogComponent {
   get project() {
     return this.projects[this.currentProjectIndex];
   }
-  
+
+  get description() {
+    return this.isEnglish
+      ? this.project.description
+      : this.project.descriptionDe;
+  }
+
   nextProject() {
     this.currentProjectIndex = (this.currentProjectIndex + 1) % this.projects.length;
   }
-
-  @Input() isEnglish: boolean = true;
 }

@@ -1,22 +1,14 @@
 <section id="project-section" class="container">
   <div class="projectContainer">
-    <h2 *ngIf="isEnglish; else dePortfolio">Portfolio</h2>
-    <ng-template #dePortfolio>
-      <h2>Portfolio</h2>
-    </ng-template>
+    <h2>{{ isEnglish ? 'Portfolio' : 'Portfolio' }}</h2>
 
-    <h1 *ngIf="isEnglish; else deFeatured">Featured Projects</h1>
-    <ng-template #deFeatured>
-      <h1>Ausgewählte Projekte</h1>
-    </ng-template>
+    <h1>{{ isEnglish ? 'Featured Projects' : 'Ausgewählte Projekte' }}</h1>
 
-    <p class="portfolioHeaderExplore" *ngIf="isEnglish; else deDescription">
-      Explore a selection of my work here - interact with projects to see my skills in action.
+    <p class="portfolioHeaderExplore">
+      {{ isEnglish 
+        ? 'Explore a selection of my work here - interact with projects to see my skills in action.' 
+        : 'Entdecken Sie hier eine Auswahl meiner Arbeiten – interagieren Sie mit Projekten, um meine Fähigkeiten in Aktion zu sehen.' }}
     </p>
-    <ng-template #deDescription>
-      <p class="portfolioHeaderExplore">Entdecken Sie hier eine Auswahl meiner Arbeiten – interagieren Sie mit
-        Projekten, um meine Fähigkeiten in Aktion zu sehen.</p>
-    </ng-template>
 
     <div class="mainContainer">
       <div class="projectsAndPictureContainer" *ngFor="let project of projects">

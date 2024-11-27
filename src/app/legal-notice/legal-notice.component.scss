@@ -2,6 +2,12 @@
   background: linear-gradient(60deg, #1c1c1c 80%, #08463b);
   background-color: #1c1c1c;
   background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+}
+
+.container-limit{
+    max-width: 1440px;
 }
 
 .headerLogo {

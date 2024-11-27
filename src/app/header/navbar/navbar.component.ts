@@ -1,50 +1,20 @@
-import { CommonModule } from '@angular/common';
-import { Component, Output, EventEmitter } from '@angular/core';
+import { CommonModule } from '@angular/common'; 
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule], 
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent {
-  isEnglish = true; 
+  @Input() isEnglish = true;
+  @Output() languageChanged = new EventEmitter<boolean>();
   isMenuVisible = false;
 
-  @Output() languageChanged = new EventEmitter<boolean>();
   constructor(private router: Router) {}
-
-  scrollToAboutMe() {
-    this.router.navigate([], { fragment: 'about-section' }).then(() => {
-      const element = document.getElementById('about-section');
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-        this.closeMenu();
-      }
-    });
-  }
-
-  scrollToSkills() {
-    this.router.navigate([], { fragment: 'skill-section' }).then(() => {
-      const element = document.getElementById('skill-section');
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-        this.closeMenu();
-      }
-    });
-  }
-
-  scrollToProjects() {
-    this.router.navigate([], { fragment: 'project-section' }).then(() => {
-      const element = document.getElementById('project-section');
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-        this.closeMenu();
-      }
-    });
-  }
 
   toggleLanguage() {
     this.isEnglish = !this.isEnglish;
@@ -52,10 +22,48 @@ export class NavbarComponent {
   }
 
   showMenu() {
-    this.isMenuVisible = !this.isMenuVisible; 
+    this.isMenuVisible = true;
   }
 
   closeMenu() {
-    this.isMenuVisible = false; 
+    this.isMenuVisible = false;
   }
+
+  navigateToHome() {
+    this.router.navigate(['/']).then(() => window.scrollTo(0, 0));
+  }
+
+  scrollToAboutMe() {
+    this.router.navigate(['/'], { fragment: 'about-section' }).then(() => {
+      setTimeout(() => {
+        const element = document.getElementById('about-section');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    });
+  }
+  
+  scrollToSkills() {
+    this.router.navigate(['/'], { fragment: 'skill-section' }).then(() => {
+      setTimeout(() => {
+        const element = document.getElementById('skill-section');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    });
+  }
+  
+  scrollToProjects() {
+    this.router.navigate(['/'], { fragment: 'project-section' }).then(() => {
+      setTimeout(() => {
+        const element = document.getElementById('project-section');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    });
+  }
+  
 }

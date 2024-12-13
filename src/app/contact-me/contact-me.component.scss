@@ -153,14 +153,18 @@ a {
     color: white !important;
 }
 
-.feedbackMessage.success {
+.success {
     background-color: #6AD7BF !important;
     color: white !important;
+    margin-top: 30px;
+    padding: 20px;
 }
 
-.feedbackMessage.error {
+.error {
     background-color: #B86363 !important;
     color: white !important;
+    margin-top: 30px;
+    padding: 20px;
 }
 
 .custom-checkbox {
